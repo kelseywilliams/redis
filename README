@@ -1,0 +1,8 @@
+HOW TO USE
+1. Make a directory for the database backup
+    > mkdir data
+2. Make a users.acl access control list.
+Instructions for creating an acl is in redis.conf
+redis.conf is pulled from the offical redis repo
+3. Start the docker containers
+    > docker-compose up --build
