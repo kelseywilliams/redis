@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+    redis:
+        image: redis
+        networks:
+            - site
+        ports:
+            - "2999:6379"
+        volumes:
+            - ./redis:/etc/redis
+            - ./data:/data
+            # TODO integrate tls within microservice structure
+            # - /etc/letsencrypt/live/kelseywilliams.co/privkey.pem:/etc/certs/privkey.pem
+            # - /etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:/etc/certs/fullchain.pem
+            # - /etc/letsencrypt/live/kelseywilliams.co/isrgrootx1.pem:/etc/certs/ca.pem
+        entrypoint: ["redis-server", "/etc/redis/redis.conf"]
+        healthcheck:
+            test: ["CMD", "redis-cli", "ping"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+    redis-test:
+        build: ./test
+        # restart: always
+        networks:
+            - site
+        volumes:
+            - ./test/log:/usr/src/app/log
+            - /etc/letsencrypt/live/kelseywilliams.co/privkey.pem:/usr/src/app/privkey.pem:ro
+            - /etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:/usr/src/app/fullchain.pem:ro
+            - /etc/letsencrypt/live/kelseywilliams.co/isrgrootx1.pem:/usr/src/app/ca.pem:ro
+        depends_on:
+            redis:
+                condition: service_healthy
+
+networks:
+    site:
+        external: true

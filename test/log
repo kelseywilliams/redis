@@ -1,0 +1,43 @@
+I am here!
+Authentication required.
+I am here!
+Success!
+<redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.SSLConnection(host=redis,port=6379,db=0)>)>)>
+User default has no permissions to run the 'set' command
+I am here!
+Success!
+<redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.SSLConnection(host=redis,port=6379,db=0)>)>)>
+User worker has no permissions to run the 'set' command
+I am here!
+Success!
+<redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.SSLConnection(host=redis,port=6379,db=0)>)>)>
+b'bar'
+NoneI am here!
+Success!
+<redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.SSLConnection(host=redis,port=6379,db=0)>)>)>
+b'bar'
+NoneI am here!
+Success!
+<redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.SSLConnection(host=redis,port=6379,db=0)>)>)>
+b'bar'
+NoneI am here!
+I am here!
+I am here!
+invalid username-password pair or user is disabled.
+I am here!
+invalid username-password pair or user is disabled.
+I am here!
+invalid username-password pair or user is disabled.
+I am here!
+invalid username-password pair or user is disabled.
+I am here!
+invalid username-password pair or user is disabled.
+I am here!
+Success!
+<redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.Connection(host=redis,port=6379,db=0)>)>)>
+b'help'
+NoneI am here!
+Success!
+<redis.client.Redis(<redis.connection.ConnectionPool(<redis.connection.Connection(host=redis,port=6379,db=0)>)>)>
+b'Holy SHIT WE FUCKING DID IT '
+None
