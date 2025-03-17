@@ -1,4 +1,4 @@
 *.acl
-*.log
+redis/*.log
 .venv/
 data/
