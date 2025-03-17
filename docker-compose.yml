@@ -20,19 +20,6 @@ services:
             interval: 10s
             timeout: 5s
             retries: 5
-    redis-test:
-        build: ./test
-        # restart: always
-        networks:
-            - site
-        volumes:
-            - ./test/log:/usr/src/app/log
-            - /etc/letsencrypt/live/kelseywilliams.co/privkey.pem:/usr/src/app/privkey.pem:ro
-            - /etc/letsencrypt/live/kelseywilliams.co/fullchain.pem:/usr/src/app/fullchain.pem:ro
-            - /etc/letsencrypt/live/kelseywilliams.co/isrgrootx1.pem:/usr/src/app/ca.pem:ro
-        depends_on:
-            redis:
-                condition: service_healthy
 
 networks:
     site:

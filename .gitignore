@@ -1,3 +1,4 @@
 *.acl
+*.log
 .venv/
 data/
